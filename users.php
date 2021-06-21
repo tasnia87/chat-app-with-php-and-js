@@ -1,3 +1,13 @@
+<?php
+session_start();
+ if(!isset($_SESSION['unique_id'])){ //_seesion remember the user information
+     header("location: login.php");
+ }
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,78 +28,33 @@
             <div class="col-md-6">
                 <div class="card px-5 py-5"> 
                     <div class="user"><header>
-                        <div class="content"><img src="download.jfif" alt="">
+                    <?php
+                    include_once "php/config.php";
+                    $sql=mysqli_query($conn,"SELECT *FROM users WHERE unique_id={$_SESSION['unique_id']}");
+                    if(mysqli_num_rows($sql)>0){
+                        $row=mysqli_fetch_assoc($sql);
+                    }
+                    ?>
+                        <div class="content"><img src="php/images/<?php echo $row['img']?>" alt="">
                         <div class="">
-                            <span>Tasnia</span>
-                            <p>Active Now</p>
+                            <span><?php echo $row['fname'] . " ". $row['lname']?></span>
+                            <p><?php echo $row['status']?></p>
                         </div>
                         </div>
-                        <div class="logout"><p>Logout</p></div>
+                        <a href="logout.php"><div class="logout"><p>Logout</p></div></a>
+                        
                     </header>
                     
-                    <div class="form-input"> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="Search an user to chat"> </div>
+                    <div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Search people" aria-label="" aria-describedby="button-addon2">
+  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+</div>
+                    
 
-                    <div class="user-list"><a href="">
-                        <div class="content"><img src="download.jfif" alt="">
-                        <div class="details">
-                            <span>Tasnia</span>
-                            <p>This is text message</p>
-                        </div>
-                        </div>
-                        <div class="status-dot"><i class="fa fa-circle"></i></div>
-                    </a></div>
 
-                    <div class="user-list"><a href="">
-                        <div class="content"><img src="download.jfif" alt="">
-                        <div class="details">
-                            <span>Tasnia</span>
-                            <p>This is text message</p>
-                        </div>
-                        </div>
-                        <div class="status-dot"><i class="fa fa-circle"></i></div>
-                    </a></div>
+                    <div class="user-list"></div>
 
-                    <div class="user-list"><a href="">
-                        <div class="content"><img src="download.jfif" alt="">
-                        <div class="details">
-                            <span>Tasnia</span>
-                            <p>This is text message</p>
-                        </div>
-                        </div>
-                        <div class="status-dot"><i class="fa fa-circle"></i></div>
-                    </a></div>
-
-                    <div class="user-list"><a href="">
-                        <div class="content"><img src="download.jfif" alt="">
-                        <div class="details">
-                            <span>Tasnia</span>
-                            <p>This is text message</p>
-                        </div>
-                        </div>
-                        <div class="status-dot"><i class="fa fa-circle"></i></div>
-                    </a></div>
-
-                    <div class="user-list"><a href="">
-                        <div class="content"><img src="download.jfif" alt="">
-                        <div class="details">
-                            <span>Tasnia</span>
-                            <p>This is text message</p>
-                        </div>
-                        </div>
-                        <div class="status-dot"><i class="fa fa-circle"></i></div>
-                    </a></div>
-
-                    <div class="user-list"><a href="">
-                        <div class="content"><img src="download.jfif" alt="">
-                        <div class="details">
-                            <span>Tasnia</span>
-                            <p>This is text message</p>
-                        </div>
-                        </div>
-                        <div class="status-dot"><i class="fa fa-circle"></i></div>
-                    </a></div>
-                    </div>
-
+                    
 
 
 
@@ -99,6 +64,6 @@
         
     </div> 
 
-    
+    <script src="javascript/users.js"></script>
 </body>
 </html>

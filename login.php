@@ -1,9 +1,3 @@
-<?php 
-  session_start();
-  if(isset($_SESSION['unique_id'])){
-    header("location: users.php");
-  }
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,8 +33,8 @@
     <input type="password" class="form-control" id="inputPassword4" name="password" required>
   </div>
                     
-                    <div class="form button mb-3">
-    <input type="submit" class="form-control btn btn-dark"  name="submit" value="LOGIN">
+                    <div class="form button mb-3"><input type="submit" class="form-control btn btn-dark"  name="submit" value="LOGIN">
+    
   </div>
                     
                     <div class="text-center mt-4"> <span>Don't have a account?</span> <a href="index.php" class="text-decoration-none">Sign Up</a> </div>
