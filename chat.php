@@ -1,3 +1,11 @@
+<?php
+session_start();
+ if(!isset($_SESSION['unique_id'])){ //_seesion remember the user information
+     header("location: login.php");
+ }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +27,18 @@
             <div class="col-md-6">
                 <div class="card "> 
                     <div class="user"><header>
-                        <div class="content"><a href=""><i class="fa fa-arrow-left"></i></a><img src="download.jfif" alt="">
+                    <?php
+                    include_once "php/config.php";
+                    $user_id=mysqli_real_escape_string($conn,$_GET['user_id']);
+                    $sql=mysqli_query($conn,"SELECT *FROM users WHERE unique_id={$user_id}");
+                    if(mysqli_num_rows($sql)>0){
+                        $row=mysqli_fetch_assoc($sql);
+                    }
+                    ?>
+                        <div class="content"><a href="users.php"><i class="fa fa-arrow-left"></i></a><img src="php/images/<?php echo $row['img']?>" alt="">
                         <div class="details">
-                            <span>Tasnia</span>
-                            <p>Active Now</p>
+                        <span><?php echo $row['fname'] . " ". $row['lname']?></span>
+                            <p><?php echo $row['status']?></p>
                         </div>
                         </div>
                         

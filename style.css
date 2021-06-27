@@ -6,12 +6,13 @@ body {
     font-weight: 300
 }
 
-.search {
+/* .search {
     position: relative;
     box-shadow: 0 0 40px rgba(51, 51, 51, .1)
-}
+} */
 
-.search input {
+
+/* .search input {
     height: 60px;
     width: 350;
     text-indent: 25px;
@@ -20,7 +21,7 @@ body {
 
 .search input:focus {
     box-shadow: none;
-    border: 2px solid blue
+    border: 2px solid rgb(196, 196, 214)
 }
 
 .search .fa-search {
@@ -33,10 +34,10 @@ body {
     position: absolute;
     top: 5px;
     right: 5px;
-    height: 50px;
+    height: 60px;
     width: 110px;
-    background: blue
-}
+    background: rgb(222, 222, 228)
+} */
 
 #alert{
     display: none;

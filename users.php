@@ -19,6 +19,7 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -44,11 +45,14 @@ session_start();
                         <a href="logout.php"><div class="logout"><p>Logout</p></div></a>
                         
                     </header>
+                    <div class="input-group search mb-3">
                     
-                    <div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Search people" aria-label="" aria-describedby="button-addon2">
-  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+  <input type="text" class="form-control" placeholder="Search Friend" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    
+  </div>
 </div>
+                    
                     
 
 
@@ -63,6 +67,7 @@ session_start();
         </div>
         
     </div> 
+    </div>
 
     <script src="javascript/users.js"></script>
 </body>
