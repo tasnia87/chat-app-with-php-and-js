@@ -11,7 +11,7 @@ continueBtn.onclick = ()=>{
     xhr.open("POST", "php/login.php", true);
     xhr.onload = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
-        
+        xhr.open("POST", "php/login.php", true);
           if(xhr.status === 200){
               let data = xhr.response;
               if(data === "success"){

@@ -115,10 +115,14 @@ session_start();
                 
                 
                 </div>
+                <form action="" class="typing-area">
                 <div class="input-group">
                     <input type="text" class="form-control" id="inputGroupFile02" placeholder="Type your message">
-                    <label class="input-group-text" for="inputGroupFile02""><i class="fa fa-telegram"></i></label>
-                  </div>
+                    <input type="text" name="outgoing" value="<?php echo $_SESSION['unique_id'];?>">
+                    <input type="text" name="incoming" value="<?php echo $user_id;?>">
+                    <button class="button"><i class="fa fa-telegram"></i></button>
+                  </div></form>
+                
                 
                 
                 
@@ -132,7 +136,7 @@ session_start();
     
    
                         
-
+<script src="javascript/chat.js"></script>
                     
     
 </body>
