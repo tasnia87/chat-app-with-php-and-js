@@ -2,6 +2,7 @@ const searchBar = document.querySelector(".user .search input"),
 searchIcon = document.querySelector(".user .search button"),
 userList = document.querySelector(".user .user-list");
 
+
 searchBar.onclick = ()=>{
   searchBar.classList.toggle("show");
   searchBar.classList.toggle("active");

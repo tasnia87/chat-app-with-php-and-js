@@ -29,11 +29,14 @@ session_start();
                     <div class="user"><header>
                     <?php
                     include_once "php/config.php";
-                    $user_id=mysqli_real_escape_string($conn,$_GET['user_id']);
-                    $sql=mysqli_query($conn,"SELECT *FROM users WHERE unique_id={$user_id}");
-                    if(mysqli_num_rows($sql)>0){
-                        $row=mysqli_fetch_assoc($sql);
-                    }
+
+                    $user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
+          $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id ={$user_id}");
+          if(mysqli_num_rows($sql) > 0){
+            $row = mysqli_fetch_assoc($sql);
+          }else{
+            header("location: users.php");
+          }
                     ?>
                         <div class="content"><a href="users.php"><i class="fa fa-arrow-left"></i></a><img src="php/images/<?php echo $row['img']?>" alt="">
                         <div class="details">
@@ -45,81 +48,19 @@ session_start();
                     </header>
 
                     <div class="chat-box">
-                        <div class="chat outgoing">
-                            <div class="details">
-                                <p>This is outgoing message</p>
-
-                            </div>
-                        </div>
-
-                        <div class="chat incoming">
-                            <img src="download.jfif" alt="">
-                            <div class="details">
-                                <p>This is incoming message</p>
-
-                            </div>
-                        </div>
-
-                        <div class="chat outgoing">
-                            <div class="details">
-                                <p>This is outgoing message</p>
-
-                            </div>
-                        </div>
-
-                        <div class="chat incoming">
-                            <img src="download.jfif" alt="">
-                            <div class="details">
-                                <p>This is incoming message</p>
-
-                            </div>
-                        </div>
-                        <div class="chat outgoing">
-                            <div class="details">
-                                <p>This is outgoing message</p>
-
-                            </div>
-                        </div>
-
-                        <div class="chat incoming">
-                            <img src="download.jfif" alt="">
-                            <div class="details">
-                                <p>This is incoming message, Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quo magni laborum dicta placeat animi neque corporis vitae ipsa commodi fugit mollitia et vel, fuga eaque? Possimus necessitatibus at id?</p>
-
-                            </div>
-                        </div>
-                        <div class="chat outgoing">
-                            <div class="details">
-                                <p>This is outgoing message</p>
-
-                            </div>
-                        </div>
-
-                        <div class="chat incoming">
-                            <img src="download.jfif" alt="">
-                            <div class="details">
-                                <p>This is incoming message</p>
-
-                            </div>
-                        </div>
-
-                        
-
-                        
-                        
-                        
+                                             
                         
                     </div>
                     
-                </div>
+                
                 
                 
                 </div>
                 <form action="" class="typing-area">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="inputGroupFile02" placeholder="Type your message">
-                    <input type="text" name="outgoing" value="<?php echo $_SESSION['unique_id'];?>">
-                    <input type="text" name="incoming" value="<?php echo $user_id;?>">
+                    <input type="text" name="message" class="form-control" id="inputGroupFile02" placeholder="Type your message">
+                    <input type="text" name="outgoing" value="<?php echo $_SESSION['unique_id'];?>"hidden>
+                    <input type="text" class="incoming-id" name="incoming" value="<?php echo $user_id;?>"hidden>
                     <button class="button"><i class="fa fa-telegram"></i></button>
                   </div></form>
                 
