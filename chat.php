@@ -60,7 +60,7 @@ session_start();
                 <div class="input-group">
                     <input type="text" name="message" class="form-control" id="inputGroupFile02" placeholder="Type your message">
                     <input type="text" name="outgoing" value="<?php echo $_SESSION['unique_id'];?>"hidden>
-                    <input type="text" class="incoming-id" name="incoming" value="<?php echo $user_id;?>"hidden>
+                    <input type="text" name="incoming" value="<?php echo $user_id;?>"hidden>
                     <button class="button"><i class="fa fa-telegram"></i></button>
                   </div></form>
                 
