@@ -28,7 +28,7 @@ session_start();
         <div class="row d-flex align-items-center justify-content-center">
             <div class="col-md-6">
                 <div class="card px-5 py-5"> 
-                    <div class="user"><header>
+                    <div class="user"> <header>
                     <?php
                     include_once "php/config.php";
                     $sql=mysqli_query($conn,"SELECT *FROM users WHERE unique_id={$_SESSION['unique_id']}");
@@ -47,7 +47,7 @@ session_start();
                     </header>
                     <div class="input-group search mb-3">
                     
-  <input type="text" class="form-control" placeholder="Search Friend" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <input type="text" class="form-control"  placeholder="Search Friend" aria-label="Recipient's username" aria-describedby="basic-addon2">
   <div class="input-group-append">
     
   </div>
