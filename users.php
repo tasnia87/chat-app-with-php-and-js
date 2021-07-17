@@ -42,7 +42,7 @@ session_start();
                             <p><?php echo $row['status']?></p>
                         </div>
                         </div>
-                        <a href="php/logout.php?user_id=<?php echo $row['unique_id']?>"><div class="logout"><p>Logout</p></div></a>
+                        <a href="php/logout.php?logout_id=<?php echo $row['unique_id']?>"><div class="logout"><p>Logout</p></div></a>
                         
                     </header>
                     <div class="input-group search mb-3">
